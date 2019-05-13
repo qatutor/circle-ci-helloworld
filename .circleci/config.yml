@@ -20,9 +20,7 @@ jobs:
               command: | 
                 export CIRCLE_TOKEN=':6d6d10b9c323092981112c649e9f51492b6f51fd'
                 curl https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/artifacts?circle-token=$CIRCLE_TOKEN | grep -o 'https://[^"]*' > artifacts.txt
+                <artifacts.txt xargs -P4 -I % wget %?circle-token=$CIRCLE_TOKEN
                 ls -al
                 echo "printing output in a file"
-                echo | cat ~/work/artifacts.txt
-                echo "complete printing output"
-               
                 curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link https://google.com "}' https://hooks.slack.com/services/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
