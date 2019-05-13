@@ -10,19 +10,12 @@ jobs:
           name: create report folder
           command: |
              mkdir -p ~/work/cucumber
-             pwd
-             ls
              touch ~/work/cucumber/report.txt
              echo "my testing notes" > ~/work/cucumber/report.txt
-             pwd
-             ls
-            
 
       - store_artifacts:
           path: ~/work/cucumber
       - run:
               name: Send text report
               command: | 
-                $TPATH = "this is a path"
-                echo $TPATH
-                curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link"}' https://hooks.slack.com/services/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
+                curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link https://google.com "}' https://hooks.slack.com/services/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
