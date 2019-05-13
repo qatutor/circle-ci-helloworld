@@ -20,6 +20,8 @@ jobs:
 
       - store_artifacts:
           path: ~/work/cucumber
+          $thispath = that is my variable
+          echo $thispath
       - run:
               name: Send text report
               command: > 
