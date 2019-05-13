@@ -20,6 +20,7 @@ jobs:
               command: | 
                 echo "printing artifacts"
                 export CIRCLE_TOKEN='$APPTOKEN'
+                echo $CIRCLE_TOKEN
                 # https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/artifacts/0/root/work/cucumber/report.html | echo
                 echo "complete printing"
                 
