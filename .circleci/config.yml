@@ -20,10 +20,11 @@ jobs:
 
       - store_artifacts:
           path: ~/work/cucumber
-          TPATH: "this is a path"
-          echo $TPATH
       - run:
               name: Send text report
+              command:    
+              TPATH = "this is a path"
+              echo $TPATH
               command: > 
                  curl -X POST -H 'Content-type: application/json' --data 
                  '{"text":"This is a link https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/artifacts"}' 
