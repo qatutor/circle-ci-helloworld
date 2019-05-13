@@ -23,6 +23,6 @@ jobs:
       - run:
               name: Send text report
               command: | 
-                TPATH = "this is a path"
+                $TPATH = "this is a path"
                 echo $TPATH
                 curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link"}' https://hooks.slack.com/services/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
