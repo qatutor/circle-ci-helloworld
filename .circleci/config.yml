@@ -22,4 +22,5 @@ jobs:
           run:
               name: Sent text report
               command: | 
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+              curl -X POST -H \”Content-type: application/json\” --data ‘{\”text\”:\”Hello, World!\”}’ https://hooks.slack.com/services/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
+              
