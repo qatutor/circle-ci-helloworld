@@ -19,8 +19,8 @@ jobs:
               name: Send text report
               command: | 
                 echo "printing artifacts"
-                curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=bf038221b58ea5f14e240a06563cf8161b5bdbb | echo
-                echo | cat artifacts.txt
+                curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=bf038221b58ea5f14e240a06563cf8161b5bdbb
+                echo "complete printing"
                 curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link https://google.com "}' https://hooks.slack.com/services/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
 
                 
