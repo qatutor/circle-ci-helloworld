@@ -12,7 +12,7 @@ jobs:
              mkdir -p ~/work/cucumber
              pwd
              ls
-             touch ~/work/cucumber
+             touch ~/work/cucumber/report.html
              pwd
              ls
 
