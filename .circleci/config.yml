@@ -20,7 +20,7 @@ jobs:
 
       - store_artifacts:
           path: ~/work/cucumber
-          echo 'this is a path' >> $thispath
+          echo "this is a path" >> $thispath
           echo $thispath
       - run:
               name: Send text report
