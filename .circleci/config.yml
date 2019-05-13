@@ -12,7 +12,8 @@ jobs:
              mkdir -p ~/work/cucumber
              pwd
              ls
-             touch ~/work/cucumber/report.html
+             touch ~/work/cucumber/report.txt
+             echo "my testing notes" > ~/work/cucumber/report.txt
              pwd
              ls
 
