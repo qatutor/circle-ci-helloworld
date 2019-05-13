@@ -19,9 +19,9 @@ jobs:
               name: Send text report
               command: | 
                 echo "printing artifacts"
-                export CIRCLE_TOKEN='$APPTOKEN'
-                echo $CIRCLE_TOKEN
-                # https://circleci.com/api/v1.1/project/:vcs-type/:username/:project/:build_num/artifacts/0/root/work/cucumber/report.html | echo
+                curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/59/artifacts?circle-token=$APPTOKEN | grep -o 'https://[^"]*' > artifacts.txt
+                echo | cat artifacts.txt
+                <artifacts.txt xargs -P4 -I % wget %?circle-token=$APPTOKEN
                 echo "complete printing"
                 
                 curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link https://google.com "}' https://hooks.slack.com/services/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
