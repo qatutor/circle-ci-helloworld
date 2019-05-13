@@ -22,5 +22,7 @@ jobs:
           path: ~/work/cucumber
       - run:
               name: Send text report
-              command: | 
-                 curl -X POST -H 'Content-type: application/json' --data '{"text":"This is a link https://www.google.com/"}' https://hooks.slack.com/services/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
+              command: > 
+                 curl -X POST -H 'Content-type: application/json' --data 
+                 '{"text":"This is a link https://www.google.com/"}' 
+                 https://hooks.slack.com/services/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
