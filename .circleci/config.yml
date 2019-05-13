@@ -20,7 +20,7 @@ jobs:
 
       - store_artifacts:
           path: ~/work/cucumber
-          TPATH = "this is a path"
+          TPATH: "this is a path"
           echo $TPATH
       - run:
               name: Send text report
