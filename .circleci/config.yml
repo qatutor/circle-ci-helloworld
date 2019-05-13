@@ -6,10 +6,10 @@ jobs:
     working_directory: ~/work
     steps:
       - checkout
-      - run: make
       - run:
+          name: create report folder
           command: |
-            mkdir -p /tmp/core_dumps
-          when: on_fail
+             mkdir -p ~/repo/cucumber
+
       - store_artifacts:
-          path: /tmp/core_dumps
+          path: ~/repo/cucumber
