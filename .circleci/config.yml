@@ -10,6 +10,7 @@ jobs:
           name: create report folder
           command: |
              mkdir -p ~/repo/cucumber
+             touch ~/repo/cucumber
 
       - store_artifacts:
           path: ~/repo/cucumber
