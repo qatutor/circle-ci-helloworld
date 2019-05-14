@@ -26,4 +26,4 @@ jobs:
                 echo "printing link"
                 echo
                 echo {"text":$reportLink}
-                curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"'$reportLink'\"}' https://hooks.slack.com/services/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
+                curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"this is a link'$reportLink'\"}' https://hooks.slack.com/services/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
