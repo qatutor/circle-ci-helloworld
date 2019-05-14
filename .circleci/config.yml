@@ -28,4 +28,4 @@ jobs:
                 reportData={"text":$reportLink}
                 echo $reportData
             
-                curl -X POST -H 'Content-type: application/json' --data '${data}' https://hooks.slack.com/services/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
+                curl -X POST -H 'Content-type: application/json' --data '{"text":$reportLink}' https://hooks.slack.com/services/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
