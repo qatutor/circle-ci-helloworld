@@ -20,6 +20,7 @@ jobs:
               command: | 
                 wget http://stedolan.github.io/jq/download/linux64/jq
                 chmod +x ./jq
+                cp jq /usr/bin
                 echo "jq is installed"
                 curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=80e9a8a99b6f02bfc5e12fcb108be9a341745d | jq '.[].url'
                 
