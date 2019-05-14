@@ -21,8 +21,5 @@ jobs:
                 wget http://stedolan.github.io/jq/download/linux64/jq
                 chmod +x ./jq
                 cp jq /usr/bin
-                echo "jq is installed"
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=$BuildReport | jq '.[].url')
-                echo "printing link"
-                var="Hello, World! ${reportLink}"
-                curl -X POST -H 'Content-type: application/json' --data '{"text": '$reportLink'}' https://hooks.slack.com/services/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
+                curl -X POST -H 'Content-type: application/json' --data '{"text": 'Please follow the report link $reportLink'}' https://hooks.slack.com/services/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
