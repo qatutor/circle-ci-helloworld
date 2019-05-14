@@ -25,5 +25,5 @@ jobs:
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=$BuildReport | jq '.[].url')
                 echo "printing link"
                 echo $reportLink
-                echo '{"text":"$reportLink"}'
+                echo {"text":"'$reportLink'"}
                 curl -X POST -H 'Content-type: application/json' --data '{"text":"'$reportLink'"}' https://hooks.slack.com/services/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
