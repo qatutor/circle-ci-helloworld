@@ -22,5 +22,6 @@ jobs:
                 chmod +x ./jq
                 cp jq /usr/bin
                 echo "jq is installed"
-                curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=$BuildReport | jq '.[].url'
-                
+                reportLink=$(curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=$BuildReport | jq '.[].url')
+                echo "printing link"
+                echo $reportLink
