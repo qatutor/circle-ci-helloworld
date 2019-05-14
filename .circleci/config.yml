@@ -18,7 +18,7 @@ jobs:
       - run:
               name: Send text report
               command: | 
-                apt-get install 
+                apt-get install jq
                 chmod +x jq
                 curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=80e9a8a99b6f02bfc5e12fcb108be9a341745d | jq '.[].url'
 
