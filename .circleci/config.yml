@@ -20,6 +20,7 @@ jobs:
               command: | 
                 echo "request artifact"
                 # download directly into ~/bin_compciv
+                mkdir ~/work/bin_compciv/jq
                 curl http://stedolan.github.io/jq/download/linux64/jq -o ~/work/bin_compciv/jq
                 # give it executable permissions
                 chmod a+x ~/bin_compciv/jq
