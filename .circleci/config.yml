@@ -18,13 +18,8 @@ jobs:
       - run:
               name: Send text report
               command: | 
-                echo "request artifact"
-                # download directly into ~/bin_compciv
-                mkdir -p ~/work/bin_compciv/
-                curl http://stedolan.github.io/jq/download/linux64/jq -o ~/work/bin_compciv/jq
-                # give it executable permissions
-                chmod a+x ~/bin_compciv/jq
-                echo 'jq is installed'
+                apt-get install 
+                chmod +x jq
                 curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=80e9a8a99b6f02bfc5e12fcb108be9a341745d | jq '.[].url'
 
                 
