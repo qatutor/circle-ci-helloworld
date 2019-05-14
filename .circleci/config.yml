@@ -24,6 +24,4 @@ jobs:
                 echo "jq is installed"
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/qatutor/circle-ci-helloworld/66/artifacts?circle-token=$BuildReport | jq '.[].url')
                 echo "printing link"
-                echo
-                echo {"text":$reportLink}
-                curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"this is a link'$reportLink'\"}' https://hooks.slack.com/services/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
+                curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
