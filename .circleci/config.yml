@@ -22,6 +22,6 @@ jobs:
                 chmod +x ./jq
                 cp jq /usr/bin
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport} | jq -r '.[].url')
-                data='$BUILD_REPORT_MESSAGE$reportLink'
+                data="$BUILD_REPORT_MESSAGE$reportLink"
                 echo $data
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$BUILD_REPORT_MESSAGE$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
