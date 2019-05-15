@@ -25,4 +25,6 @@ jobs:
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport} | jq -r '.[].url')
                 echo "printing link"
                 echo $reportLink
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$BUILD_REPORT_MESSAGE' '$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
+                echo "printing message"
+                echo ${BUILD_REPORT_MESSAGE}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$BUILD_REPORT_MESSAGE''$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
