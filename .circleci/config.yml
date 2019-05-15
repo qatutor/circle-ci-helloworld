@@ -25,4 +25,4 @@ jobs:
                 echo ${CIRCLE_PROJECT}
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/circle-ci-helloworld/${CIRCLE_BUILD_NUM}/artifacts?circle-token=$BuildReport | jq '.[].url')
                 echo $reportLink
-                curl -X POST -H 'Content-type: application/json' --data '{"text": '$reportLink'}' S{SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": '$reportLink'}' ${SLACK_AUTOMATION_CHANNEL}
