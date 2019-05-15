@@ -21,5 +21,7 @@ jobs:
                 wget http://stedolan.github.io/jq/download/linux64/jq
                 chmod +x ./jq
                 cp jq /usr/bin
+                
                 reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport} | jq '.[].url')
+                "This is a message" ${reportLink} | echo 
                 curl -X POST -H 'Content-type: application/json' --data '{"text": '"This is a message" ${reportLink}'}' ${SLACK_AUTOMATION_CHANNEL}
