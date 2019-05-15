@@ -21,9 +21,6 @@ jobs:
                 wget http://stedolan.github.io/jq/download/linux64/jq
                 chmod +x ./jq
                 cp jq /usr/bin
-                echo "printing project name"
-                echo ${CIRCLE_PROJECT_NAME}
-                echo ${CIRCLE_PROJECT_REPONAME}
-                reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=$BuildReport | jq '.[].url')
+                reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport} | jq '.[].url')
                 echo $reportLink
-                curl -X POST -H 'Content-type: application/json' --data '{"text": '$reportLink'}' ${SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": '${reportLink}'}' ${SLACK_AUTOMATION_CHANNEL}
