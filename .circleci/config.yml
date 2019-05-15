@@ -27,4 +27,4 @@ jobs:
                 echo $reportLink
                 echo "printing message"
                 echo ${BUILD_REPORT_MESSAGE}
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$BUILD_REPORT_MESSAGE''$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$BUILD_REPORT_MESSAGE$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
