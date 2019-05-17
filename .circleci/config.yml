@@ -17,7 +17,11 @@ jobs:
           path: ~/work/cucumber
       - run:
               name: Send text report
+              environment:
+                TARGET_API: 'integration'
               command: | 
+                echo "printing environment variable name"
+                echod $TARGET_API
                 wget http://stedolan.github.io/jq/download/linux64/jq
                 chmod +x ./jq
                 cp jq /usr/bin
