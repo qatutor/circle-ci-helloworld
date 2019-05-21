@@ -20,23 +20,9 @@ jobs:
               environment:
                 TARGET_API: 'integration'
               command: | 
-                # # echo "Repo:"
-                # echo "Repo: $CIRCLE_REPOSITORY_URL"
-                # echo
-
-                # # echo "Commiter:"
-                # echo "Commiter: $CIRCLE_PROJECT_USERNAME"
-                # echo
-
-                # echo "Commit message:"
-                # COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
-                # echo "Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
-
-                # echo "Build number:"
-                # echo "Build number: $CIRCLE_BUILD_NUM"
-                # echo
-
-                result="Build number: $CIRCLE_BUILD_NUM"$'\n'"Repo: $CIRCLE_REPOSITORY_URL"$'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"$'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
+                result="Build number: $CIRCLE_BUILD_NUM"
+                $'\n'"Repo: $CIRCLE_REPOSITORY_URL"
+                $'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"$'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
 
                 echo "$result"
 
