@@ -33,10 +33,10 @@ jobs:
                 # echo "Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
 
                 # echo "Build number:"
-                echo "Build number: $CIRCLE_BUILD_NUM"
-                echo
+                # echo "Build number: $CIRCLE_BUILD_NUM"
+                # echo
 
-                result="Repo: $CIRCLE_REPOSITORY_URL"$'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"$'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
+                result="Build number: $CIRCLE_BUILD_NUM"$'\n'"Repo: $CIRCLE_REPOSITORY_URL"$'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"$'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
 
                 echo "$result"
 
