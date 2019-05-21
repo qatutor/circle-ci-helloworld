@@ -24,4 +24,4 @@ jobs:
                 COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
                 echo "printing $COMMIT_MESSAGE"
                 echo "printing $CIRCLE_BUILD_NUM"
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "Build number: '$CIRCLE_BUILD_NUM'\n\nRepo: '$CIRCLE_REPOSITORY_URL'\n\nCommiter:'$CIRCLE_PROJECT_USERNAME'\n\nCommit message: '"$COMMIT_MESSAGE"' "}' ${SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "Build number: '$CIRCLE_BUILD_NUM'\n\nRepo: '$CIRCLE_REPOSITORY_URL'\n\nCommiter:\t\t'$CIRCLE_PROJECT_USERNAME'\n\nCommit message: '"$COMMIT_MESSAGE"' "}' ${SLACK_AUTOMATION_CHANNEL}
