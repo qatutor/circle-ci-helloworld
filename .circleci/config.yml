@@ -20,6 +20,7 @@ jobs:
               environment:
                 TARGET_API: 'integration'
               command: |
+                
                 echo "$REPORT_MESSAGE" 
 
                 # curl -X POST -H 'Content-type: application/json' --data '{"text": "'$CIRCLE_REPOSITORY_URL'"}' ${SLACK_AUTOMATION_CHANNEL}
