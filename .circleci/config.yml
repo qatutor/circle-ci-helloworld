@@ -36,4 +36,8 @@ jobs:
                 echo $CIRCLE_BUILD_NUM
                 echo
 
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$CIRCLE_REPOSITORY_URL'"}' ${SLACK_AUTOMATION_CHANNEL}
+
+
+
           
