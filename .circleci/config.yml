@@ -29,8 +29,8 @@ jobs:
                 echo
 
                 echo "Commit message:"
-                echo $CIRCLE_SHA1
-                echo
+                COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
+                echo $COMMIT_MESSAGE
 
                 echo "Build number:"
                 echo $CIRCLE_BUILD_NUM
