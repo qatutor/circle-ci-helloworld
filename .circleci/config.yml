@@ -20,20 +20,20 @@ jobs:
               environment:
                 TARGET_API: 'integration'
               command: | 
-                echo "Repo:"
-                echo $CIRCLE_REPOSITORY_URL
+                # echo "Repo:"
+                echo "Repo: $CIRCLE_REPOSITORY_URL"
                 echo
 
-                echo "Commiter:"
-                echo $CIRCLE_PROJECT_USERNAME
+                # echo "Commiter:"
+                echo "Commiter: $CIRCLE_PROJECT_USERNAME"
                 echo
 
-                echo "Commit message:"
-                COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
-                echo $COMMIT_MESSAGE
+                # echo "Commit message:"
+                # COMMIT_MESSAGE=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
+                echo "Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
 
-                echo "Build number:"
-                echo $CIRCLE_BUILD_NUM
+                # echo "Build number:"
+                echo "Build number: $CIRCLE_BUILD_NUM"
                 echo
 
                 curl -X POST -H 'Content-type: application/json' --data '{"text": "'$CIRCLE_REPOSITORY_URL'"}' ${SLACK_AUTOMATION_CHANNEL}
