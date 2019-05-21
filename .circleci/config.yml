@@ -22,4 +22,4 @@ jobs:
               command: |
                 result="Build number: $CIRCLE_BUILD_NUM \n\n""Repo: $CIRCLE_REPOSITORY_URL \n\n""Commiter: $CIRCLE_PROJECT_USERNAME \n\n""Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
                 echo "$result" 
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "Build number: '$CIRCLE_BUILD_NUM'\n\nRepo: '$CIRCLE_REPOSITORY_URL'\n\nCommiter:'$CIRCLE_PROJECT_USERNAME'\n\nComommit message: '$(git log --format=oneline -n 1 $CIRCLE_SHA1)' "}' ${SLACK_AUTOMATION_CHANNEL}
+                curl -X POST -H 'Content-type: application/json' --data '{"text": "Build number: '$CIRCLE_BUILD_NUM'\n\nRepo: '$CIRCLE_REPOSITORY_URL'\n\nCommiter:'$CIRCLE_PROJECT_USERNAME'"}' ${SLACK_AUTOMATION_CHANNEL}
