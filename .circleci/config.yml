@@ -36,7 +36,9 @@ jobs:
                 echo "Build number: $CIRCLE_BUILD_NUM"
                 echo
 
-                echo "'Repo: $CIRCLE_REPOSITORY_URL\nCommiter: $CIRCLE_PROJECT_USERNAME'"
+                result=$'Repo: $CIRCLE_REPOSITORY_URL\nCommiter: $CIRCLE_PROJECT_USERNAME'
+
+                echo "$result"
 
                 curl -X POST -H 'Content-type: application/json' --data '{"text": "'$CIRCLE_REPOSITORY_URL'"}' ${SLACK_AUTOMATION_CHANNEL}
 
