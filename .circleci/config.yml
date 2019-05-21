@@ -36,7 +36,7 @@ jobs:
                 echo "Build number: $CIRCLE_BUILD_NUM"
                 echo
 
-                result=$'Repo: "$CIRCLE_REPOSITORY_URL"\nCommiter: "$CIRCLE_PROJECT_USERNAME"'
+                result=$'Repo: "'$CIRCLE_REPOSITORY_URL'"\nCommiter: "'$CIRCLE_PROJECT_USERNAME'"'
 
                 echo "$result"
 
