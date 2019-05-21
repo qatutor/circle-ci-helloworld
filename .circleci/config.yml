@@ -20,14 +20,20 @@ jobs:
               environment:
                 TARGET_API: 'integration'
               command: | 
-                echo "printing environment variable name"
-                echo $TARGET_API
-                wget http://stedolan.github.io/jq/download/linux64/jq
-                chmod +x ./jq
-                cp jq /usr/bin
-                echo $CIRCLE_USERNAME
-                echo $CIRCLE_PROJECT_REPONAME
+                echo "Repo:"
+                echo $CIRCLE_REPOSITORY_URL
+                echo
+
+                echo "Commiter:"
+                echo $CIRCLE_PROJECT_USERNAME
+                echo
+
+                echo "Commit message:"
+                echo $CIRCLE_SHA1
+                echo
+
+                echo "Build number:"
                 echo $CIRCLE_BUILD_NUM
-                curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport}
-                reportLink=$(curl https://circleci.com/api/v1.1/project/github/${CIRCLE_USERNAME}/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_BUILD_NUM}/artifacts?circle-token=${BuildReport} | jq -r '.[].url')
-                curl -X POST -H 'Content-type: application/json' --data '{"text": "'$reportLink'"}' ${SLACK_AUTOMATION_CHANNEL}
+                echo
+
+          
