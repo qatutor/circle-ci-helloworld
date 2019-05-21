@@ -19,10 +19,11 @@ jobs:
               name: Send text report
               environment:
                 TARGET_API: 'integration'
-              command: | 
+              command: > 
                 result="Build number: $CIRCLE_BUILD_NUM"
-                $'\n'"Repo: $CIRCLE_REPOSITORY_URL"
-                $'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"$'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
+                       $'\n'"Repo: $CIRCLE_REPOSITORY_URL"
+                       $'\n'"Commiter: $CIRCLE_PROJECT_USERNAME"
+                       $'\n'"Commit message: $(git log --format=oneline -n 1 $CIRCLE_SHA1)"
 
                 echo "$result"
 
